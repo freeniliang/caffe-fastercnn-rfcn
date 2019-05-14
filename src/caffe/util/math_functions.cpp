@@ -93,6 +93,7 @@ void caffe_copy(const int N, const Dtype* X, Dtype* Y) {
       NO_GPU;
 #endif
     } else {
+		//LOG(INFO) << "sizeof(Dtype) * N=" << sizeof(Dtype)* N <<  "Y=0x" << Y << " X=0x"<<X << std::endl;
       memcpy(Y, X, sizeof(Dtype) * N);  // NOLINT(caffe/alt_fn)
     }
   }
